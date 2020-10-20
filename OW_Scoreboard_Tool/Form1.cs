@@ -3684,6 +3684,7 @@ namespace OW_Scoreboard_Tool
             DefaultHeroList.Add(new Hero("Brigitte", Properties.Resources.Brigitte, ""));
             DefaultHeroList.Add(new Hero("D.Va", Properties.Resources.Dva, ""));
             DefaultHeroList.Add(new Hero("Doomfist", Properties.Resources.Doomfist, ""));
+            DefaultHeroList.Add(new Hero("Echo", Properties.Resources.Echo, ""));
             DefaultHeroList.Add(new Hero("Genji", Properties.Resources.Genji, ""));
             DefaultHeroList.Add(new Hero("Hanzo", Properties.Resources.Hanzo, ""));
             DefaultHeroList.Add(new Hero("Junkrat", Properties.Resources.Junkrat, ""));

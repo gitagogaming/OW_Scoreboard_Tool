@@ -293,6 +293,7 @@
     <None Include="Hero Portraits\Ashe.png" />
     <Content Include="Hero Portraits\Baptiste.png" />
     <Content Include="Hero Portraits\Brigitte.png" />
+    <Content Include="Hero Portraits\Echo.png" />
     <Content Include="Hero Portraits\Sigma.png" />
     <Content Include="Resources\3D-Baptiste.png" />
     <Content Include="Resources\3D-WreckingBall.png" />
