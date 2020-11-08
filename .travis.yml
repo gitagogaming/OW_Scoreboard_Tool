@@ -1,1 +1,2 @@
-language: C#
+language: csharp
+solution: OW_Scoreboard_Tool.sln
