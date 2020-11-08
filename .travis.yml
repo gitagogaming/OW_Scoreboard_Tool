@@ -1,2 +1,3 @@
 language: csharp
 solution: OW_Scoreboard_Tool.sln
+os: windows
