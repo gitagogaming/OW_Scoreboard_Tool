@@ -3703,6 +3703,7 @@ namespace OW_Scoreboard_Tool
             DefaultHeroList.Add(new Hero("Reinhardt", Properties.Resources.Reinhardt, ""));
             DefaultHeroList.Add(new Hero("Roadhog", Properties.Resources.Roadhog, ""));
             DefaultHeroList.Add(new Hero("Sigma", Properties.Resources.Sigma, ""));
+            DefaultHeroList.Add(new Hero("Sojourn", Properties.Resources.Sojourn, ""));
             DefaultHeroList.Add(new Hero("Soldier: 76", Properties.Resources.Soldier76, ""));
             DefaultHeroList.Add(new Hero("Sombra", Properties.Resources.Sombra, ""));
             DefaultHeroList.Add(new Hero("Symmetra", Properties.Resources.Symmetra, ""));
