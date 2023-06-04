@@ -2049,7 +2049,7 @@ namespace OW_Scoreboard_Tool
         {
             using (StreamWriter sw = File.CreateText(path + "\\" + folder + "\\" + file + ".txt"))
             {
-                sw.WriteLine(((Map)field.SelectedValue).Name.Replace("Assault", "").Replace("Escort", "").Replace("Hybrid", "").Replace("Control", ""));
+                sw.WriteLine(((Map)field.SelectedValue).Name.Replace("Assault", "").Replace("Escort", "").Replace("Hybrid", "").Replace("Control", "").Replace("Push", ""));
             }
             using (StreamWriter sw = File.CreateText(path + "\\" + folder + "\\" + file + "Gametype" + ".txt"))
             {
@@ -3682,19 +3682,23 @@ namespace OW_Scoreboard_Tool
             DefaultHeroList.Add(new Hero("Baptiste", Properties.Resources.Baptiste, ""));
             DefaultHeroList.Add(new Hero("Bastion", Properties.Resources.Bastion, ""));
             DefaultHeroList.Add(new Hero("Brigitte", Properties.Resources.Brigitte, ""));
+            DefaultHeroList.Add(new Hero("Cassidy", Properties.Resources.Cassidy, ""));
             DefaultHeroList.Add(new Hero("D.Va", Properties.Resources.Dva, ""));
             DefaultHeroList.Add(new Hero("Doomfist", Properties.Resources.Doomfist, ""));
             DefaultHeroList.Add(new Hero("Echo", Properties.Resources.Echo, ""));
             DefaultHeroList.Add(new Hero("Genji", Properties.Resources.Genji, ""));
             DefaultHeroList.Add(new Hero("Hanzo", Properties.Resources.Hanzo, ""));
+            DefaultHeroList.Add(new Hero("JunkerQueen", Properties.Resources.JunkerQueen, ""));
             DefaultHeroList.Add(new Hero("Junkrat", Properties.Resources.Junkrat, ""));
+            DefaultHeroList.Add(new Hero("Kiriko", Properties.Resources.Kiriko, ""));
+            DefaultHeroList.Add(new Hero("LifeWeaver", Properties.Resources.LifeWeaver, ""));
             DefaultHeroList.Add(new Hero("Lúcio", Properties.Resources.Lucio, ""));
-            DefaultHeroList.Add(new Hero("McCree", Properties.Resources.McCree, ""));
             DefaultHeroList.Add(new Hero("Mei", Properties.Resources.Mei, ""));
             DefaultHeroList.Add(new Hero("Mercy", Properties.Resources.Mercy, ""));
             DefaultHeroList.Add(new Hero("Moira", Properties.Resources.Moira, ""));
             DefaultHeroList.Add(new Hero("Orisa", Properties.Resources.Orisa, ""));
             DefaultHeroList.Add(new Hero("Pharah", Properties.Resources.Pharah, ""));
+            DefaultHeroList.Add(new Hero("Ramattra", Properties.Resources.Ramattra, ""));
             DefaultHeroList.Add(new Hero("Reaper", Properties.Resources.Reaper, ""));
             DefaultHeroList.Add(new Hero("Reinhardt", Properties.Resources.Reinhardt, ""));
             DefaultHeroList.Add(new Hero("Roadhog", Properties.Resources.Roadhog, ""));
@@ -3720,6 +3724,8 @@ namespace OW_Scoreboard_Tool
             DefaultGametypeList.Add(new Gametype("Control", Properties.Resources.Icon_control, ""));
             DefaultGametypeList.Add(new Gametype("Escort", Properties.Resources.Icon_escort, ""));
             DefaultGametypeList.Add(new Gametype("Hybrid", Properties.Resources.Icon_hybrid, ""));
+            DefaultGametypeList.Add(new Gametype("Push", Properties.Resources.Icon_push, ""));
+
         }
 
         /// <summary>
@@ -3731,10 +3737,15 @@ namespace OW_Scoreboard_Tool
             DefaultMapList.Add(new Map("Control", DefaultGametypeList[2], Properties.Resources.Control, ""));
             DefaultMapList.Add(new Map("Escort", DefaultGametypeList[3], Properties.Resources.Escort, ""));
             DefaultMapList.Add(new Map("Hybrid", DefaultGametypeList[4], Properties.Resources.Hybrid, ""));
+            DefaultMapList.Add(new Map("Push", DefaultGametypeList[5], Properties.Resources.Push, ""));
+            DefaultMapList.Add(new Map("Antartic Peninsula", DefaultGametypeList[2], Properties.Resources.Antartic_Peninsula, ""));
             DefaultMapList.Add(new Map("Blizzard World", DefaultGametypeList[4], Properties.Resources.Blizzard_World, ""));
             DefaultMapList.Add(new Map("Busan", DefaultGametypeList[2], Properties.Resources.Busan, ""));
+            DefaultMapList.Add(new Map("Circuit Royale", DefaultGametypeList[3], Properties.Resources.Circuit_Royale, ""));
+            DefaultMapList.Add(new Map("Colosseo", DefaultGametypeList[5], Properties.Resources.Colosseo, ""));
             DefaultMapList.Add(new Map("Dorado", DefaultGametypeList[3], Properties.Resources.Dorado, ""));
             DefaultMapList.Add(new Map("Eichenwalde", DefaultGametypeList[4], Properties.Resources.Eichenwalde, ""));
+            DefaultMapList.Add(new Map("Esperança", DefaultGametypeList[5], Properties.Resources.Esperanca, ""));
             DefaultMapList.Add(new Map("Hanamura", DefaultGametypeList[1], Properties.Resources.Hanamura, ""));
             DefaultMapList.Add(new Map("Havana", DefaultGametypeList[3], Properties.Resources.Havana, ""));
             DefaultMapList.Add(new Map("Hollywood", DefaultGametypeList[4], Properties.Resources.Hollywood, ""));
@@ -3743,13 +3754,18 @@ namespace OW_Scoreboard_Tool
             DefaultMapList.Add(new Map("Junkertown", DefaultGametypeList[3], Properties.Resources.Junkertown, ""));
             DefaultMapList.Add(new Map("King\'s Row", DefaultGametypeList[4], Properties.Resources.King_s_Row, ""));
             DefaultMapList.Add(new Map("Lijiang Tower", DefaultGametypeList[2], Properties.Resources.Lijiang_Tower, ""));
+            DefaultMapList.Add(new Map("Midtown", DefaultGametypeList[4], Properties.Resources.Midtown, ""));
             DefaultMapList.Add(new Map("Paris", DefaultGametypeList[1], Properties.Resources.Paris, ""));
             DefaultMapList.Add(new Map("Nepal", DefaultGametypeList[2], Properties.Resources.Nepal, ""));
             DefaultMapList.Add(new Map("Numbani", DefaultGametypeList[4], Properties.Resources.Numbani, ""));
             DefaultMapList.Add(new Map("Oasis", DefaultGametypeList[2], Properties.Resources.Oasis, ""));
+            DefaultMapList.Add(new Map("Paraíso", DefaultGametypeList[4], Properties.Resources.Paraiso, ""));
+            DefaultMapList.Add(new Map("Paris", DefaultGametypeList[2], Properties.Resources.Paris, ""));
             DefaultMapList.Add(new Map("Rialto", DefaultGametypeList[3], Properties.Resources.Rialto, ""));
             DefaultMapList.Add(new Map("Route 66", DefaultGametypeList[3], Properties.Resources.Route_66, ""));
+            DefaultMapList.Add(new Map("Shambali", DefaultGametypeList[3], Properties.Resources.Shambali, ""));
             DefaultMapList.Add(new Map("Temple of Anubis", DefaultGametypeList[1], Properties.Resources.Temple_of_Anubis, ""));
+            DefaultMapList.Add(new Map("Toronto", DefaultGametypeList[5], Properties.Resources.Toronto, ""));
             DefaultMapList.Add(new Map("Volskaya Industries", DefaultGametypeList[1], Properties.Resources.Volskaya_Industries, ""));
             DefaultMapList.Add(new Map("Watchpoint: Gibraltar", DefaultGametypeList[3], Properties.Resources.Watchpoint_Gibraltar, ""));
 

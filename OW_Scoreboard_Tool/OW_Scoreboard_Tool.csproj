@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>OW_Scoreboard_Tool</RootNamespace>
     <AssemblyName>OW_Scoreboard_Tool</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PublishUrl>publish\</PublishUrl>
@@ -26,6 +26,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -289,6 +290,50 @@
     <None Include="Resources\Icon-none.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Lucio.png" />
+    <None Include="Resources\Soldier76.png" />
+    <None Include="Resources\Sigma.png" />
+    <None Include="Resources\Roadhog.png" />
+    <None Include="Resources\Orisa.png" />
+    <None Include="Resources\Moira.png" />
+    <None Include="Resources\Kiriko.png" />
+    <None Include="Resources\Sojourn.png" />
+    <None Include="Resources\Ramattra.png" />
+    <None Include="Resources\LifeWeaver.png" />
+    <None Include="Resources\JunkerQueen.png" />
+    <None Include="Resources\Torbjorn.png" />
+    <None Include="Resources\Zenyatta.png" />
+    <None Include="Resources\Zarya.png" />
+    <None Include="Resources\Junkrat.png" />
+    <None Include="Resources\WreckingBall.png" />
+    <None Include="Resources\Winston.png" />
+    <None Include="Resources\Widowmaker.png" />
+    <None Include="Resources\Tracer.png" />
+    <None Include="Resources\Symmetra.png" />
+    <None Include="Resources\Sombra.png" />
+    <None Include="Resources\Reinhardt.png" />
+    <None Include="Resources\Reaper.png" />
+    <None Include="Resources\Phara.png" />
+    <None Include="Resources\Mercy.png" />
+    <None Include="Resources\Mei.png" />
+    <None Include="Resources\Paraiso.png" />
+    <None Include="Resources\Watchpoint_Gibraltar.png" />
+    <None Include="Resources\Volskaya_Industries.png" />
+    <None Include="Resources\Toronto.png" />
+    <None Include="Resources\Temple_of_Anubis.png" />
+    <None Include="Resources\Shambali.png" />
+    <None Include="Resources\Route_66.png" />
+    <None Include="Resources\Rialto.png" />
+    <None Include="Resources\Push.png" />
+    <None Include="Resources\Paris.png" />
+    <None Include="Resources\Oasis.png" />
+    <None Include="Resources\Numbani.png" />
+    <None Include="Resources\Nepal.png" />
+    <None Include="Resources\Midtown.png" />
+    <None Include="Resources\Lijiang_Tower.png" />
+    <None Include="Resources\King%27s_Row.png" />
+    <None Include="Resources\Junkertown.png" />
+    <None Include="Resources\Ilios.png" />
     <None Include="Resources\3D-Ashe.png" />
     <None Include="Hero Portraits\Ashe.png" />
     <Content Include="Hero Portraits\Baptiste.png" />
@@ -311,28 +356,74 @@
     <None Include="Resources\Icon-busan.png" />
     <None Include="Resources\Icon-Ashe.png" />
     <None Include="Resources\Ashe_OWL.png" />
-    <Content Include="Resources\Ashe.png" />
+    <None Include="Resources\Antartic_Peninsula.png" />
     <None Include="Resources\Assault.png" />
-    <Content Include="Resources\Baptiste.png" />
+    <None Include="Resources\Ana.png" />
+    <None Include="Resources\Ashe.png" />
+    <None Include="Resources\Baptiste.png" />
     <Content Include="Resources\Baptiste_OWL.png" />
+    <None Include="Resources\Bastion.png" />
     <Content Include="Resources\BGG.png" />
     <None Include="Resources\Blizzard_World.png" />
     <None Include="Resources\Busan.png" />
+    <None Include="Resources\Circuit_Royale.png" />
+    <None Include="Resources\Brigitte.png" />
+    <None Include="Resources\Cassidy.png" />
+    <None Include="Resources\Color Anubis1.png" />
+    <None Include="Resources\Color Assault1.png" />
+    <None Include="Resources\Color Blizzworld1.png" />
+    <None Include="Resources\Color Busan1.png" />
+    <None Include="Resources\Color Control1.png" />
+    <None Include="Resources\Color Dorado1.png" />
+    <None Include="Resources\Color Eichenwalde1.png" />
+    <None Include="Resources\Color Escort1.png" />
+    <None Include="Resources\Color Hanamura1.png" />
     <Content Include="Resources\Color Havana.png" />
+    <None Include="Resources\color havana1.png" />
+    <None Include="Resources\Color Hollywood1.png" />
+    <None Include="Resources\Color Horizon1.png" />
+    <None Include="Resources\Color Hybrid1.png" />
+    <None Include="Resources\Color Ilios1.png" />
+    <None Include="Resources\Color Junkertown1.png" />
+    <None Include="Resources\Color King_s Row1.png" />
+    <None Include="Resources\Color Lijiang1.png" />
+    <None Include="Resources\Color Nepal1.png" />
+    <None Include="Resources\Color Numbani1.png" />
+    <None Include="Resources\Color Oasis1.png" />
     <Content Include="Resources\Color Paris.png" />
+    <None Include="Resources\Colosseo.png" />
     <None Include="Resources\Control.png" />
+    <None Include="Resources\color paris1.png" />
+    <None Include="Resources\Color Rialto1.png" />
+    <None Include="Resources\Color Route661.png" />
+    <None Include="Resources\Color Volskaya1.png" />
     <Content Include="Resources\Desat Paris.png" />
     <None Include="Resources\Dorado.png" />
     <None Include="Resources\Eichenwalde.png" />
+    <None Include="Resources\Escort.png" />
+    <None Include="Resources\Esperanca.png" />
     <None Include="Resources\Hanamura.png" />
     <None Include="Resources\Havana.png" />
     <None Include="Resources\Hollywood.png" />
     <None Include="Resources\Horizon_Lundar_Colony.png" />
-    <None Include="Resources\Escort.png" />
     <None Include="Resources\Hybrid.png" />
+    <None Include="Resources\Doomfist.png" />
+    <None Include="Resources\Dva.png" />
+    <None Include="Resources\Genji.png" />
+    <None Include="Resources\Hanzo.png" />
+    <None Include="Resources\Echo.png" />
+    <None Include="Resources\Icon-assault.png" />
     <Content Include="Resources\Icon-Baptiste.png" />
     <None Include="Resources\Icon-havana.png" />
+    <None Include="Resources\Icon-defense.png" />
+    <None Include="Resources\Icon-escort.png" />
+    <None Include="Resources\Icon-hybrid.png" />
+    <None Include="Resources\Icon-offense.png" />
+    <None Include="Resources\Icon-control.png" />
+    <None Include="Resources\Icon-ctf.png" />
+    <None Include="Resources\Icon-deathmatch.png" />
     <Content Include="Resources\Icon-paris.png" />
+    <None Include="Resources\Icon-push.png" />
     <Content Include="Resources\Icon-Wrecking_Ball.png" />
     <None Include="Resources\Junkrat_OWL.png" />
     <None Include="Resources\Lucio_OWL.png" />
@@ -353,21 +444,8 @@
     <None Include="Resources\Widowmaker_OWL.png" />
     <None Include="Resources\Winston_OWL.png" />
     <None Include="Resources\Questionmark.png" />
-    <None Include="Resources\Ilios.png" />
-    <None Include="Resources\Junkertown.png" />
-    <None Include="Resources\King%27s_Row.png" />
-    <None Include="Resources\Lijiang_Tower.png" />
-    <None Include="Resources\Nepal.png" />
-    <None Include="Resources\Numbani.png" />
-    <None Include="Resources\Oasis.png" />
-    <None Include="Resources\Paris.png" />
-    <None Include="Resources\Rialto.png" />
-    <None Include="Resources\Route_66.png" />
-    <Content Include="Resources\Sigma.png" />
-    <None Include="Resources\Temple_of_Anubis.png" />
-    <None Include="Resources\Volskaya_Industries.png" />
-    <None Include="Resources\Watchpoint_Gibraltar.png" />
-    <Content Include="Resources\WreckingBall.png" />
+    <None Include="Resources\Kiriko_v3.png" />
+    <None Include="Resources\Kirikov2.png" />
     <None Include="Resources\Zenyatta_OWL.png" />
     <None Include="Resources\Icon-rialto.png" />
     <None Include="Resources\Desat Rialto.png" />
@@ -401,7 +479,6 @@
     <None Include="Resources\3D-Ana.png" />
     <None Include="Resources\Icon-blizzworld.png" />
     <None Include="Resources\Icon-brigitte.png" />
-    <None Include="Resources\Brigitte.png" />
     <None Include="Resources\Desat Hybrid.png" />
     <None Include="Resources\Desat Escort.png" />
     <None Include="Resources\Desat Control.png" />
@@ -450,38 +527,12 @@
     <None Include="Resources\Icon-control-pool.png" />
     <None Include="Resources\Icon-dps.png" />
     <None Include="Resources\Icon-flex.png" />
-    <None Include="Resources\Icon-ctf.png" />
-    <None Include="Resources\Icon-deathmatch.png" />
     <None Include="Resources\Icon-elmination.png" />
     <None Include="Resources\Icon-tdm.png" />
-    <None Include="Resources\Moira.png" />
     <None Include="Resources\Icon-moira.png" />
     <None Include="Resources\Icon-junkertown.png" />
-    <None Include="Resources\Sombra.png" />
-    <None Include="Resources\Widowmaker.png" />
-    <None Include="Resources\Torbjorn.png" />
-    <None Include="Resources\Symmetra.png" />
-    <None Include="Resources\Zarya.png" />
-    <None Include="Resources\Winston.png" />
-    <None Include="Resources\Reaper.png" />
-    <None Include="Resources\Roadhog.png" />
-    <None Include="Resources\Soldier76.png" />
-    <None Include="Resources\Zenyatta.png" />
-    <None Include="Resources\Reinhardt.png" />
-    <None Include="Resources\Junkrat.png" />
-    <None Include="Resources\Hanzo.png" />
-    <None Include="Resources\Mei.png" />
-    <None Include="Resources\Genji.png" />
     <None Include="Resources\McCree.png" />
-    <None Include="Resources\Mercy.png" />
-    <None Include="Resources\Lucio.png" />
     <None Include="Resources\Pharah.png" />
-    <None Include="Resources\Doomfist.png" />
-    <None Include="Resources\Dva.png" />
-    <None Include="Resources\Bastion.png" />
-    <None Include="Resources\Ana.png" />
-    <None Include="Resources\Orisa.png" />
-    <None Include="Resources\Tracer.png" />
     <None Include="Hero Portraits\Bastion.png" />
     <None Include="Hero Portraits\Doomfist.png" />
     <None Include="Hero Portraits\Dva.png" />
@@ -510,10 +561,6 @@
     <Content Include="Hero Portraits\Moira.png" />
     <Content Include="Hero Portraits\WreckingBall.png" />
     <Content Include="owul_logo_gray.ico" />
-    <None Include="Resources\Icon-assault.png" />
-    <None Include="Resources\Icon-control.png" />
-    <None Include="Resources\Icon-escort.png" />
-    <None Include="Resources\Icon-hybrid.png" />
     <None Include="Resources\Icon-ilios.png" />
     <None Include="Resources\icon-route.png" />
     <None Include="Resources\icon-oasis.png" />
@@ -531,8 +578,6 @@
     <None Include="Resources\icon-temple.png" />
     <None Include="Resources\Icon-tank.png" />
     <None Include="Resources\Icon-support.png" />
-    <None Include="Resources\Icon-offense.png" />
-    <None Include="Resources\Icon-defense.png" />
     <None Include="Resources\Icon-doomfist.png" />
   </ItemGroup>
   <ItemGroup>
