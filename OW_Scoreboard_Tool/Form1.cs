@@ -2049,7 +2049,7 @@ namespace OW_Scoreboard_Tool
         {
             using (StreamWriter sw = File.CreateText(path + "\\" + folder + "\\" + file + ".txt"))
             {
-                sw.WriteLine(((Map)field.SelectedValue).Name.Replace("Assault", "").Replace("Escort", "").Replace("Hybrid", "").Replace("Control", "").Replace("Push", ""));
+                sw.WriteLine(((Map)field.SelectedValue).Name.Replace("Assault", "").Replace("Escort", "").Replace("Hybrid", "").Replace("Control", "").Replace("Push", "").Replace("Flashpoint", ""));
             }
             using (StreamWriter sw = File.CreateText(path + "\\" + folder + "\\" + file + "Gametype" + ".txt"))
             {
@@ -3726,6 +3726,8 @@ namespace OW_Scoreboard_Tool
             DefaultGametypeList.Add(new Gametype("Escort", Properties.Resources.Icon_escort, ""));
             DefaultGametypeList.Add(new Gametype("Hybrid", Properties.Resources.Icon_hybrid, ""));
             DefaultGametypeList.Add(new Gametype("Push", Properties.Resources.Icon_push, ""));
+            DefaultGametypeList.Add(new Gametype("Flashpoint", Properties.Resources.Icon_flashpoint, ""));
+
 
         }
 
@@ -3739,6 +3741,7 @@ namespace OW_Scoreboard_Tool
             DefaultMapList.Add(new Map("Escort", DefaultGametypeList[3], Properties.Resources.Escort, ""));
             DefaultMapList.Add(new Map("Hybrid", DefaultGametypeList[4], Properties.Resources.Hybrid, ""));
             DefaultMapList.Add(new Map("Push", DefaultGametypeList[5], Properties.Resources.Push, ""));
+            DefaultMapList.Add(new Map("Flashpoint", DefaultGametypeList[5], Properties.Resources.Flashpoint, ""));
             DefaultMapList.Add(new Map("Antartic Peninsula", DefaultGametypeList[2], Properties.Resources.Antartic_Peninsula, ""));
             DefaultMapList.Add(new Map("Blizzard World", DefaultGametypeList[4], Properties.Resources.Blizzard_World, ""));
             DefaultMapList.Add(new Map("Busan", DefaultGametypeList[2], Properties.Resources.Busan, ""));
@@ -3758,6 +3761,7 @@ namespace OW_Scoreboard_Tool
             DefaultMapList.Add(new Map("Midtown", DefaultGametypeList[4], Properties.Resources.Midtown, ""));
             DefaultMapList.Add(new Map("Paris", DefaultGametypeList[1], Properties.Resources.Paris, ""));
             DefaultMapList.Add(new Map("Nepal", DefaultGametypeList[2], Properties.Resources.Nepal, ""));
+            DefaultMapList.Add(new Map("New Junk City", DefaultGametypeList[5], Properties.Resources.NewJunkCity, ""));
             DefaultMapList.Add(new Map("Numbani", DefaultGametypeList[4], Properties.Resources.Numbani, ""));
             DefaultMapList.Add(new Map("Oasis", DefaultGametypeList[2], Properties.Resources.Oasis, ""));
             DefaultMapList.Add(new Map("Paraíso", DefaultGametypeList[4], Properties.Resources.Paraiso, ""));
@@ -3765,6 +3769,7 @@ namespace OW_Scoreboard_Tool
             DefaultMapList.Add(new Map("Rialto", DefaultGametypeList[3], Properties.Resources.Rialto, ""));
             DefaultMapList.Add(new Map("Route 66", DefaultGametypeList[3], Properties.Resources.Route_66, ""));
             DefaultMapList.Add(new Map("Shambali", DefaultGametypeList[3], Properties.Resources.Shambali, ""));
+            DefaultMapList.Add(new Map("Suravasa", DefaultGametypeList[5], Properties.Resources.Suravasa, ""));
             DefaultMapList.Add(new Map("Temple of Anubis", DefaultGametypeList[1], Properties.Resources.Temple_of_Anubis, ""));
             DefaultMapList.Add(new Map("Toronto", DefaultGametypeList[5], Properties.Resources.Toronto, ""));
             DefaultMapList.Add(new Map("Volskaya Industries", DefaultGametypeList[1], Properties.Resources.Volskaya_Industries, ""));
