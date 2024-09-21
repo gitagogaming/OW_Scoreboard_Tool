@@ -326,14 +326,13 @@ namespace OW_Scoreboard_Tool
 
         #endregion
 
-
         #region HotKeys
         /// <summary>
         /// Handling Hotkey Details
         /// </summary>
         /// 
         private Control inputControl = null;
-        private const int HOTKEY_ID = 1; // Identifier for the hotkey
+        private Dictionary<string, int> hotkeyIds = new Dictionary<string, int>();
 
         [DllImport("user32.dll")]
         private static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint vk);
@@ -352,23 +351,17 @@ namespace OW_Scoreboard_Tool
         private bool isCtrlPressed = false;
         private bool isAltPressed = false;
         private Keys selectedKey;
+        private string currentHotkeyName = string.Empty;
 
-        // Entry point that must not be changed
         private void SetHotkey(object sender, EventArgs e)
         {
-            // Get the button that was clicked
             Button clickedButton = sender as Button;
 
-            // Extract the number from the button's name
-            if (clickedButton != null )
+            if (clickedButton != null)
             {
-                //string hotkeyNumber = clickedButton.Name.Substring("BTN_SetHotkey".Length); // Get the number part
-                //int hotkeyIndex = int.Parse(hotkeyNumber); // Convert to integer
-
-                // Now use hotkeyIndex to determine which hotkey to set
                 if (!isListeningForKey)
                 {
-                    StartListeningForHotkey(clickedButton.Name); // Modify this to pass the index
+                    StartListeningForHotkey(clickedButton.Name);
                     Console.WriteLine($"Listening for hotkey {clickedButton.Name}");
                 }
                 else
@@ -382,6 +375,7 @@ namespace OW_Scoreboard_Tool
         {
             if (!isListeningForKey)
             {
+                currentHotkeyName = btnName;
                 string inputName = btnName.Replace("BTN_", "INPUT_");
                 inputControl = this.Controls.Find(inputName, true).FirstOrDefault();
 
@@ -396,7 +390,6 @@ namespace OW_Scoreboard_Tool
                 this.KeyUp += Form1_KeyUp;
             }
         }
-
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -462,29 +455,105 @@ namespace OW_Scoreboard_Tool
             if (isShiftPressed) modifier |= MOD_SHIFT;
             if (isAltPressed) modifier |= MOD_ALT;
 
-            UnregisterHotkeys(); // Unregister any existing hotkeys
-            RegisterHotKey(this.Handle, HOTKEY_ID, modifier, (uint)selectedKey);
+            // Unregister only the hotkey associated with the current button
+            UnregisterHotkeys(currentHotkeyName);
+
+            int hotkeyId = currentHotkeyName.GetHashCode();
+            hotkeyIds[currentHotkeyName] = hotkeyId;
+
+            RegisterHotKey(this.Handle, hotkeyId, modifier, (uint)selectedKey);
+            Console.WriteLine($"Registered hotkey for {currentHotkeyName} with ID {hotkeyId}");
         }
 
-        private void UnregisterHotkeys()
+
+        private void UnregisterHotkeys(string hotkeyName)
         {
-            UnregisterHotKey(this.Handle, HOTKEY_ID);
+            if (hotkeyIds.ContainsKey(hotkeyName))
+            {
+                int hotkeyId = hotkeyIds[hotkeyName];
+                UnregisterHotKey(this.Handle, hotkeyId);
+                hotkeyIds.Remove(hotkeyName);
+            }
         }
 
         protected override void WndProc(ref Message m)
         {
             const int WM_HOTKEY = 0x0312;
-            if (m.Msg == WM_HOTKEY && m.WParam.ToInt32() == HOTKEY_ID)
+            if (m.Msg == WM_HOTKEY)
             {
-                Console.Write(HOTKEY_ID);
-                SwapTeams(); // Trigger the action associated with the hotkey
+                int pressedHotkeyId = m.WParam.ToInt32();
+                string hotkeyName = hotkeyIds.FirstOrDefault(x => x.Value == pressedHotkeyId).Key;
+                Console.WriteLine($"Hotkey pressed: {hotkeyName}");
+
+                if (!string.IsNullOrEmpty(hotkeyName))
+                {
+                    Console.WriteLine($"Hotkey pressed: {hotkeyName}");
+                    PerformHotkeyAction(hotkeyName);
+                }
             }
             base.WndProc(ref m);
         }
 
+        private void PerformHotkeyAction(string hotkeyName)
+        {
+            switch (hotkeyName)
+            {
+                case "BTN_SET_HK_SWAPTEAMS":
+                    m1SwapButton_Click(hotkeyName, null);
+                    break;
+
+                case "BTN_SET_HK_RESET":
+                    m1ResetButton_Click(hotkeyName, null);
+                    break;
+
+                case "BTN_SET_HK_INCREMENT_T1":
+                    NumericUpDown scoreControlT1 = this.Controls.Find("m1t1Score", true).FirstOrDefault() as NumericUpDown;
+                    if (scoreControlT1 != null)
+                    {
+                        scoreControlT1.Value += 1;
+                    }
+                    break;
+
+                case "BTN_SET_HK_INCREMENT_T2":
+                    NumericUpDown scoreControlT2 = this.Controls.Find("m1t2Score", true).FirstOrDefault() as NumericUpDown;
+                    if (scoreControlT2 != null)
+                    {
+                        scoreControlT2.Value += 1;
+                    }
+                    break;
+
+                case "BTN_SET_HK_DECREMENT_T1":
+                    NumericUpDown scoreControlT1Dec = this.Controls.Find("m1t1Score", true).FirstOrDefault() as NumericUpDown;
+                    if (scoreControlT1Dec != null)
+                    {
+                        if (scoreControlT1Dec.Value > 0) {
+                            scoreControlT1Dec.Value -= 1;
+                        }
+                    }
+                    break;
+
+                case "BTN_SET_HK_DECREMENT_T2":
+                    NumericUpDown scoreControlT2Dec = this.Controls.Find("m1t2Score", true).FirstOrDefault() as NumericUpDown;
+                    if (scoreControlT2Dec != null)
+                    {
+                        if (scoreControlT2Dec.Value > 0)
+                        {
+                            scoreControlT2Dec.Value -= 1;
+                        }
+                    }
+                    break;
+
+
+
+                // Add more cases for other hotkeys
+                default:
+                    Console.WriteLine($"No action defined for hotkey: {hotkeyName}");
+                    break;
+            }
+        }
+
         private void SwapTeams()
         {
-            // Your logic to swap teams
             MessageBox.Show("Teams swapped!");
         }
 
@@ -5551,13 +5620,24 @@ namespace OW_Scoreboard_Tool
                 }
                 else
                 {
-                    MessageBox.Show("Image file not found or path is invalid: " + imagePath);
+                    // we could have a status bar that displays errors if they occur??
+                    //MessageBox.Show("Image file not found or path is invalid: " + imagePath);
                 }
             }
             else
             {
                 MessageBox.Show($"PictureBox with name {pictureBoxName} not found.");
             }
+        }
+
+        private void LBL_SET_HK_UPDATE_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void INPUT_SET_HK_UPDATE_Click(object sender, EventArgs e)
+        {
+
         }
 
 
