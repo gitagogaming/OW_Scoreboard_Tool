@@ -16,6 +16,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Net.Http;
 using System.Runtime.InteropServices;
+using System.Net;
 
 namespace OW_Scoreboard_Tool
 {
@@ -155,6 +156,7 @@ namespace OW_Scoreboard_Tool
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
+            StartHttpServer();
             isInitializing = false;
             RegisterHotkeys();
 
@@ -325,6 +327,178 @@ namespace OW_Scoreboard_Tool
         }
 
         #endregion
+
+        #region HTTPServer
+        private HttpListener httpListener;
+
+        public void StartHttpServer()
+        {
+            httpListener = new HttpListener();
+            httpListener.Prefixes.Add("http://localhost:8080/"); // Set your desired port and URL
+            httpListener.Start();
+            Console.WriteLine("HTTP Server started. Listening for requests...");
+
+            httpListener.BeginGetContext(OnRequestReceived, httpListener);
+        }
+
+        private void OnRequestReceived(IAsyncResult result)
+        {
+            if (httpListener == null || !httpListener.IsListening) return;
+
+            var context = httpListener.EndGetContext(result);
+            var request = context.Request;
+            var response = context.Response;
+
+            string responseString = "OK";
+
+            // Check for /trigger endpoint
+            if (request.Url.AbsolutePath == "/trigger")
+            {
+                Console.WriteLine("Triggered.. request...", request);
+                string action = request.QueryString["action"];
+                Console.WriteLine("Triggered.. but...", action);
+
+                if (!string.IsNullOrEmpty(action))
+                {
+                    HandleAction(action);
+                    responseString = $"Action '{action}' triggered!";
+                }
+                else
+                {
+                    responseString = "No action specified.";
+                }
+            }
+            // Check for /set endpoint to set the hero image
+            else if (request.Url.AbsolutePath == "/set")
+            {
+                Console.WriteLine("Set hero image request...", request);
+                string teamSide = request.QueryString["teamSide"];
+                string imageUrl = request.QueryString["imageUrl"];
+
+                if (!string.IsNullOrEmpty(imageUrl))
+                {
+                    Console.WriteLine("Side picked: " + teamSide);
+
+                    if (teamSide == "team1")
+                    {
+                        // Check if the imageUrl is a local file or a remote URL
+                        if (File.Exists(imageUrl))
+                        {
+                            SetHeroImage("m1t1Logo", imageUrl); // For local files
+                        }
+                        else
+                        {
+                            // Download the image to a local temp folder and set it
+                            string tempPath = Path.Combine(Path.GetTempPath(), Path.GetFileName(imageUrl));
+                            using (var client = new WebClient())
+                            {
+                                client.DownloadFile(imageUrl, tempPath);
+                            }
+                            SetHeroImage("m1t1Logo", tempPath); // Set the downloaded image
+                        }
+                    }
+                    else if (teamSide == "team2")
+                    {
+                        if (File.Exists(imageUrl))
+                        {
+                            SetHeroImage("m1t2Logo", imageUrl);
+                        }
+                        else
+                        {
+                            // Download the image to a local temp folder and set it
+                            string tempPath = Path.Combine(Path.GetTempPath(), Path.GetFileName(imageUrl));
+                            using (var client = new WebClient())
+                            {
+                                client.DownloadFile(imageUrl, tempPath);
+                            }
+                            SetHeroImage("m1t2Logo", tempPath); // Set the downloaded image
+                        }
+                    }
+                }
+                else
+                {
+                    responseString = "No image URL specified.";
+                }
+            }
+
+
+            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
+            response.ContentLength64 = buffer.Length;
+            response.OutputStream.Write(buffer, 0, buffer.Length);
+            response.OutputStream.Close();
+
+            // Listen for the next request
+            httpListener.BeginGetContext(OnRequestReceived, httpListener);
+        }
+
+
+        private void HandleAction(string action)
+        {
+            // Nested function to handle UI thread-safe invocation
+            void InvokeOnUI(Action uiAction)
+            {
+                if (this.InvokeRequired)
+                {
+                    this.Invoke((MethodInvoker)delegate { uiAction(); });
+                }
+                else
+                {
+                    uiAction();
+                }
+            }
+
+            // Switch on the action and call the appropriate method
+            switch (action)
+            {
+                case "swapteams":
+                    // Use the nested function to trigger the swap button click safely
+                    InvokeOnUI(() => m1SwapButton_Click(this, null));
+                    break;
+
+                case "increment_t1":
+                    // Use the nested function for team 1 increment
+                    InvokeOnUI(() => IncrementTeamScore("Team1"));
+                    break;
+
+                case "increment_t2":
+                    // Use the nested function for team 2 increment
+                    InvokeOnUI(() => IncrementTeamScore("Team2"));
+                    break;
+
+                case "decrement_t1":
+                    // Use the nested function for team 1 decrement
+                    InvokeOnUI(() => DecrementTeamScore("Team1"));
+                    break;
+
+                case "decrement_t2":
+                    // Use the nested function for team 2 decrement
+                    InvokeOnUI(() => DecrementTeamScore("Team2"));
+                    break;
+
+                case "reset":
+                    // Use the nested function for reset
+                    InvokeOnUI(() => m1ResetButton_Click(this, null));
+                    break;
+
+                case "update":
+                    // Use the nested function for update
+                    InvokeOnUI(() => updateSeries());
+                    break;
+
+                case "setHeroImage":
+                    // Use the nested function for setting hero image
+                    //InvokeOnUI(() => SetHeroImage());
+                    break;
+
+                default:
+                    Console.WriteLine($"Unknown action: {action}");
+                    break;
+            }
+        }
+
+
+        #endregion
+
 
         #region HotKeys
         /// <summary>
@@ -507,40 +681,19 @@ namespace OW_Scoreboard_Tool
                     break;
 
                 case "BTN_SET_HK_INCREMENT_T1":
-                    NumericUpDown scoreControlT1 = this.Controls.Find("m1t1Score", true).FirstOrDefault() as NumericUpDown;
-                    if (scoreControlT1 != null)
-                    {
-                        scoreControlT1.Value += 1;
-                    }
+                    IncrementTeamScore("Team1");
                     break;
 
                 case "BTN_SET_HK_INCREMENT_T2":
-                    NumericUpDown scoreControlT2 = this.Controls.Find("m1t2Score", true).FirstOrDefault() as NumericUpDown;
-                    if (scoreControlT2 != null)
-                    {
-                        scoreControlT2.Value += 1;
-                    }
+                    IncrementTeamScore("Team2");
                     break;
 
                 case "BTN_SET_HK_DECREMENT_T1":
-                    NumericUpDown scoreControlT1Dec = this.Controls.Find("m1t1Score", true).FirstOrDefault() as NumericUpDown;
-                    if (scoreControlT1Dec != null)
-                    {
-                        if (scoreControlT1Dec.Value > 0) {
-                            scoreControlT1Dec.Value -= 1;
-                        }
-                    }
+                    DecrementTeamScore("Team1");
                     break;
 
                 case "BTN_SET_HK_DECREMENT_T2":
-                    NumericUpDown scoreControlT2Dec = this.Controls.Find("m1t2Score", true).FirstOrDefault() as NumericUpDown;
-                    if (scoreControlT2Dec != null)
-                    {
-                        if (scoreControlT2Dec.Value > 0)
-                        {
-                            scoreControlT2Dec.Value -= 1;
-                        }
-                    }
+                    DecrementTeamScore("Team2");
                     break;
 
 
@@ -549,6 +702,53 @@ namespace OW_Scoreboard_Tool
                 default:
                     Console.WriteLine($"No action defined for hotkey: {hotkeyName}");
                     break;
+            }
+        }
+
+        private void IncrementTeamScore(string teamName)
+        {
+            if (teamName == "team1")
+            {
+                NumericUpDown scoreControl = this.Controls.Find("m1t1Score", true).FirstOrDefault() as NumericUpDown;
+                if (scoreControl != null)
+                {
+                    scoreControl.Value += 1;
+                }
+            }
+            else if (teamName == "team2")
+            {
+                NumericUpDown scoreControl = this.Controls.Find("m1t2Score", true).FirstOrDefault() as NumericUpDown;
+                if (scoreControl != null)
+                {
+                    scoreControl.Value += 1;
+                }
+            }
+
+        }
+
+        private void DecrementTeamScore(string teamName)
+        {
+           if (teamName == "team1")
+            {
+                NumericUpDown scoreControl = this.Controls.Find("m1t1Score", true).FirstOrDefault() as NumericUpDown;
+                if (scoreControl != null)
+                {
+                    if (scoreControl.Value > 0)
+                    {
+                        scoreControl.Value -= 1;
+                    }
+                }
+            }
+            else if (teamName == "team2")
+            {
+                NumericUpDown scoreControl = this.Controls.Find("m1t2Score", true).FirstOrDefault() as NumericUpDown;
+                if (scoreControl != null)
+                {
+                    if (scoreControl.Value > 0)
+                    {
+                        scoreControl.Value -= 1;
+                    }
+                }
             }
         }
 
@@ -5637,6 +5837,12 @@ namespace OW_Scoreboard_Tool
 
         private void INPUT_SET_HK_UPDATE_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+            ButtonToolTip.SetToolTip(((Button)sender), "Oh helo there");
 
         }
 
