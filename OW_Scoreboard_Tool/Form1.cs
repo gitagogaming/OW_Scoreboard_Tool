@@ -378,41 +378,35 @@ namespace OW_Scoreboard_Tool
                 if (!string.IsNullOrEmpty(imageUrl))
                 {
                     Console.WriteLine("Side picked: " + teamSide);
+                    string tempFileName = Guid.NewGuid().ToString() + Path.GetExtension(imageUrl);
+                    string tempPath = Path.Combine(Path.GetTempPath(), tempFileName);
 
-                    if (teamSide == "team1")
+                    try
                     {
-                        // Check if the imageUrl is a local file or a remote URL
                         if (File.Exists(imageUrl))
                         {
-                            SetHeroImage("m1t1Logo", imageUrl); // For local files
+                            // Local file case
+                            SetHeroImage(teamSide == "team1" ? "m1t1Logo" : "m1t2Logo", imageUrl);
                         }
                         else
                         {
                             // Download the image to a local temp folder and set it
-                            string tempPath = Path.Combine(Path.GetTempPath(), Path.GetFileName(imageUrl));
                             using (var client = new WebClient())
                             {
                                 client.DownloadFile(imageUrl, tempPath);
                             }
-                            SetHeroImage("m1t1Logo", tempPath); // Set the downloaded image
+
+                            // Attempt to set the downloaded image
+                            SetHeroImage(teamSide == "team1" ? "m1t1Logo" : "m1t2Logo", tempPath);
                         }
                     }
-                    else if (teamSide == "team2")
+                    catch (IOException ioEx)
                     {
-                        if (File.Exists(imageUrl))
-                        {
-                            SetHeroImage("m1t2Logo", imageUrl);
-                        }
-                        else
-                        {
-                            // Download the image to a local temp folder and set it
-                            string tempPath = Path.Combine(Path.GetTempPath(), Path.GetFileName(imageUrl));
-                            using (var client = new WebClient())
-                            {
-                                client.DownloadFile(imageUrl, tempPath);
-                            }
-                            SetHeroImage("m1t2Logo", tempPath); // Set the downloaded image
-                        }
+                        Console.WriteLine("Could not set hero image: " + ioEx.Message);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("An unexpected error occurred: " + ex.Message);
                     }
                 }
                 else
@@ -420,7 +414,6 @@ namespace OW_Scoreboard_Tool
                     responseString = "No image URL specified.";
                 }
             }
-
 
             byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
             response.ContentLength64 = buffer.Length;
@@ -430,6 +423,7 @@ namespace OW_Scoreboard_Tool
             // Listen for the next request
             httpListener.BeginGetContext(OnRequestReceived, httpListener);
         }
+
 
 
         private void HandleAction(string action)
@@ -1710,6 +1704,7 @@ namespace OW_Scoreboard_Tool
         /// </summary>
         private void bracketTeamsUpdate_Click(object sender, EventArgs e)
         {
+
             updateText(bracketTeam1, FolderList[9].Replace("\\", ""), BracketFiles[0].Replace(".txt", ""));
             updateText(bracketTeam2, FolderList[9].Replace("\\", ""), BracketFiles[1].Replace(".txt", ""));
             updateText(bracketTeam3, FolderList[9].Replace("\\", ""), BracketFiles[2].Replace(".txt", ""));
