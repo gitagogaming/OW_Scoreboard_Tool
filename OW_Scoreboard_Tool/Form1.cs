@@ -28,10 +28,6 @@ namespace OW_Scoreboard_Tool
         const int Bytes_TO_READ = sizeof(Int64);
         Series Match1 = new Series();
         private bool isInitializing = true;
-
-
-
-        private bool isInitializing = true;
         private bool isListeningForKey = false;
 
 
