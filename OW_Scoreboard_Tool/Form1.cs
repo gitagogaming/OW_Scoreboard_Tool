@@ -14,6 +14,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Net.Http;
+using System.Runtime.InteropServices;
+using System.Net;
+using System.Diagnostics;
 
 namespace OW_Scoreboard_Tool
 {
@@ -148,6 +152,12 @@ namespace OW_Scoreboard_Tool
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Form1_Load seems to have no impact on the startup time when commenting out various things
+            StartHttpServer();
+            isInitializing = false;
+            RegisterHotkeys();
+
+
             loadText(m1MutualInfo, "Match1", "DivisionNumber");
 
             loadScore(m1t1Score, "Match1", "t1Score");
@@ -1260,6 +1270,16 @@ namespace OW_Scoreboard_Tool
         /// </summary>
         private void bracketTeamsUpdate_Click(object sender, EventArgs e)
         {
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            // update text and updatebutton adds 80ms max
+            // updateScore doesnt sem to add any additional time either..
+            // SetBracket Teams takes 6.0+ seconds to complette
+            // LoadTeamsInBracket takes no additional time
+
+            // Managed to cut SetBracketTeams down to ~1 second by limiting UI updates until its finished adding the teams.
+
+
+
             updateText(bracketTeam1, FolderList[9].Replace("\\", ""), BracketFiles[0].Replace(".txt", ""));
             updateText(bracketTeam2, FolderList[9].Replace("\\", ""), BracketFiles[1].Replace(".txt", ""));
             updateText(bracketTeam3, FolderList[9].Replace("\\", ""), BracketFiles[2].Replace(".txt", ""));
@@ -1294,6 +1314,7 @@ namespace OW_Scoreboard_Tool
             updateButton(bracketImage15, FolderList[9].Replace("\\", ""), BracketFiles[30].Replace(".png", ""));
             updateButton(bracketImage16, FolderList[9].Replace("\\", ""), BracketFiles[31].Replace(".png", ""));
 
+            // updating update score doesnt sem to add any additional time either..
             updateScore(bracketTeam1W, FolderList[9].Replace("\\", ""), BracketFiles[176].Replace(".txt", ""));
             updateScore(bracketTeam1L, FolderList[9].Replace("\\", ""), BracketFiles[177].Replace(".txt", ""));
             updateScore(bracketTeam1MW, FolderList[9].Replace("\\", ""), BracketFiles[178].Replace(".txt", ""));
@@ -1362,6 +1383,9 @@ namespace OW_Scoreboard_Tool
             setBracketTeams();
 
             LoadTeamsInBracket();
+
+            stopwatch.Stop();
+            Console.WriteLine("Bracket Teams Update Time: " + stopwatch.ElapsedMilliseconds);
         }
 
         /// <summary>
@@ -2221,6 +2245,7 @@ namespace OW_Scoreboard_Tool
         /// <returns>Lists of players</returns>
         private List<Player> updatePlayers(string side)
         {
+
             List<Player> players = new List<Player>();
             if (side.Equals("h"))
             {
@@ -4774,7 +4799,11 @@ namespace OW_Scoreboard_Tool
         /// </summary>
         private void setBracketTeams()
         {
+            
             BracketTeams.Clear();
+
+            BracketTeams.RaiseListChangedEvents = false;
+
             BracketTeams.Add(new Team());
             BracketTeams.Add(new Team(bracketTeam1.Text, path + FolderList[9] + BracketFiles[16]));
             BracketTeams.Add(new Team(bracketTeam2.Text, path + FolderList[9] + BracketFiles[17]));
@@ -4792,6 +4821,10 @@ namespace OW_Scoreboard_Tool
             BracketTeams.Add(new Team(bracketTeam14.Text, path + FolderList[9] + BracketFiles[29]));
             BracketTeams.Add(new Team(bracketTeam15.Text, path + FolderList[9] + BracketFiles[30]));
             BracketTeams.Add(new Team(bracketTeam16.Text, path + FolderList[9] + BracketFiles[31]));
+           
+            BracketTeams.RaiseListChangedEvents = true;
+            BracketTeams.ResetBindings();
+
         }
 
         #endregion
