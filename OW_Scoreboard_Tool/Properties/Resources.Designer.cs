@@ -173,6 +173,16 @@ namespace OW_Scoreboard_Tool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Clash {
+            get {
+                object obj = ResourceManager.GetObject("Clash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Colosseo {
             get {
                 object obj = ResourceManager.GetObject("Colosseo", resourceCulture);
@@ -263,6 +273,16 @@ namespace OW_Scoreboard_Tool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Flashpoint {
+            get {
+                object obj = ResourceManager.GetObject("Flashpoint", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Genji {
             get {
                 object obj = ResourceManager.GetObject("Genji", resourceCulture);
@@ -276,6 +296,16 @@ namespace OW_Scoreboard_Tool.Properties {
         internal static System.Drawing.Bitmap Hanamura {
             get {
                 object obj = ResourceManager.GetObject("Hanamura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hanaoka {
+            get {
+                object obj = ResourceManager.GetObject("Hanaoka", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,6 +383,16 @@ namespace OW_Scoreboard_Tool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_clash {
+            get {
+                object obj = ResourceManager.GetObject("Icon_clash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_control {
             get {
                 object obj = ResourceManager.GetObject("Icon_control", resourceCulture);
@@ -416,6 +456,16 @@ namespace OW_Scoreboard_Tool.Properties {
         internal static System.Drawing.Bitmap Icon_escort {
             get {
                 object obj = ResourceManager.GetObject("Icon_escort", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_flashpoint {
+            get {
+                object obj = ResourceManager.GetObject("Icon_flashpoint", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -513,6 +563,16 @@ namespace OW_Scoreboard_Tool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Illari {
+            get {
+                object obj = ResourceManager.GetObject("Illari", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap JunkerQueen {
             get {
                 object obj = ResourceManager.GetObject("JunkerQueen", resourceCulture);
@@ -536,6 +596,16 @@ namespace OW_Scoreboard_Tool.Properties {
         internal static System.Drawing.Bitmap Junkrat {
             get {
                 object obj = ResourceManager.GetObject("Junkrat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Juno {
+            get {
+                object obj = ResourceManager.GetObject("Juno", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -586,6 +656,16 @@ namespace OW_Scoreboard_Tool.Properties {
         internal static System.Drawing.Bitmap Lucio {
             get {
                 object obj = ResourceManager.GetObject("Lucio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mauga {
+            get {
+                object obj = ResourceManager.GetObject("Mauga", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -646,6 +726,16 @@ namespace OW_Scoreboard_Tool.Properties {
         internal static System.Drawing.Bitmap Nepal {
             get {
                 object obj = ResourceManager.GetObject("Nepal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap New_Junk_City {
+            get {
+                object obj = ResourceManager.GetObject("New_Junk_City", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -803,6 +893,26 @@ namespace OW_Scoreboard_Tool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Runasapi {
+            get {
+                object obj = ResourceManager.GetObject("Runasapi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Samoa {
+            get {
+                object obj = ResourceManager.GetObject("Samoa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Shambali {
             get {
                 object obj = ResourceManager.GetObject("Shambali", resourceCulture);
@@ -853,6 +963,16 @@ namespace OW_Scoreboard_Tool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Suravasa {
+            get {
+                object obj = ResourceManager.GetObject("Suravasa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Symmetra {
             get {
                 object obj = ResourceManager.GetObject("Symmetra", resourceCulture);
@@ -866,6 +986,16 @@ namespace OW_Scoreboard_Tool.Properties {
         internal static System.Drawing.Bitmap Temple_of_Anubis {
             get {
                 object obj = ResourceManager.GetObject("Temple_of_Anubis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Throne_of_Anubis {
+            get {
+                object obj = ResourceManager.GetObject("Throne_of_Anubis", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -896,6 +1026,16 @@ namespace OW_Scoreboard_Tool.Properties {
         internal static System.Drawing.Bitmap Tracer {
             get {
                 object obj = ResourceManager.GetObject("Tracer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Venture {
+            get {
+                object obj = ResourceManager.GetObject("Venture", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

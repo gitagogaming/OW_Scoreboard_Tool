@@ -290,6 +290,16 @@
     <None Include="Resources\Icon-none.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Venture.png" />
+    <None Include="Resources\Throne_of_Anubis.png" />
+    <None Include="Resources\Suravasa.png" />
+    <None Include="Resources\Samoa.png" />
+    <None Include="Resources\Runasapi.png" />
+    <None Include="Resources\New_Junk_City.png" />
+    <None Include="Resources\Mauga.png" />
+    <None Include="Resources\Juno.png" />
+    <None Include="Resources\Illari.png" />
+    <None Include="Resources\Icon_flashpoint.bmp" />
     <None Include="Resources\Lucio.png" />
     <None Include="Resources\Soldier76.png" />
     <None Include="Resources\Sigma.png" />
@@ -356,11 +366,11 @@
     <None Include="Resources\Icon-busan.png" />
     <None Include="Resources\Icon-Ashe.png" />
     <None Include="Resources\Ashe_OWL.png" />
-    <None Include="Resources\Antartic_Peninsula.png" />
     <None Include="Resources\Assault.png" />
     <None Include="Resources\Ana.png" />
     <None Include="Resources\Ashe.png" />
     <None Include="Resources\Baptiste.png" />
+    <None Include="Resources\Antartic_Peninsula.png" />
     <Content Include="Resources\Baptiste_OWL.png" />
     <None Include="Resources\Bastion.png" />
     <Content Include="Resources\BGG.png" />
@@ -378,6 +388,7 @@
     <None Include="Resources\Color Eichenwalde1.png" />
     <None Include="Resources\Color Escort1.png" />
     <None Include="Resources\Color Hanamura1.png" />
+    <None Include="Resources\Clash.png" />
     <Content Include="Resources\Color Havana.png" />
     <None Include="Resources\color havana1.png" />
     <None Include="Resources\Color Hollywood1.png" />
@@ -413,15 +424,19 @@
     <None Include="Resources\Hanzo.png" />
     <None Include="Resources\Echo.png" />
     <None Include="Resources\Icon-assault.png" />
+    <None Include="Resources\Hanaoka.png" />
+    <None Include="Resources\Flashpoint.png" />
     <Content Include="Resources\Icon-Baptiste.png" />
     <None Include="Resources\Icon-havana.png" />
     <None Include="Resources\Icon-defense.png" />
-    <None Include="Resources\Icon-escort.png" />
+    <Resource Include="Resources\Icon-escort.png" />
     <None Include="Resources\Icon-hybrid.png" />
     <None Include="Resources\Icon-offense.png" />
     <None Include="Resources\Icon-control.png" />
     <None Include="Resources\Icon-ctf.png" />
     <None Include="Resources\Icon-deathmatch.png" />
+    <None Include="Resources\Icon-clash.png" />
+    <None Include="Resources\Icon-flashpoint.png" />
     <Content Include="Resources\Icon-paris.png" />
     <None Include="Resources\Icon-push.png" />
     <Content Include="Resources\Icon-Wrecking_Ball.png" />
