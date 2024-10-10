@@ -2959,7 +2959,7 @@ namespace OW_Scoreboard_Tool
             // 
             // m1t2Logo
             // 
-            this.m1t2Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.m1t2Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.m1t2Logo.Image = global::OW_Scoreboard_Tool.Properties.Resources.nologo;
             this.m1t2Logo.Location = new System.Drawing.Point(500, 7);
             this.m1t2Logo.Name = "m1t2Logo";

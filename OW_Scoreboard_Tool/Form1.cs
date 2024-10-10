@@ -443,43 +443,31 @@ namespace OW_Scoreboard_Tool
             switch (action)
             {
                 case "swapteams":
-                    // Use the nested function to trigger the swap button click safely
                     InvokeOnUI(() => m1SwapButton_Click(this, null));
                     break;
 
                 case "increment_t1":
-                    // Use the nested function for team 1 increment
                     InvokeOnUI(() => IncrementTeamScore("Team1"));
                     break;
 
                 case "increment_t2":
-                    // Use the nested function for team 2 increment
                     InvokeOnUI(() => IncrementTeamScore("Team2"));
                     break;
 
                 case "decrement_t1":
-                    // Use the nested function for team 1 decrement
                     InvokeOnUI(() => DecrementTeamScore("Team1"));
                     break;
 
                 case "decrement_t2":
-                    // Use the nested function for team 2 decrement
                     InvokeOnUI(() => DecrementTeamScore("Team2"));
                     break;
 
                 case "reset":
-                    // Use the nested function for reset
                     InvokeOnUI(() => m1ResetButton_Click(this, null));
                     break;
 
                 case "update":
-                    // Use the nested function for update
                     InvokeOnUI(() => updateSeries());
-                    break;
-
-                case "setHeroImage":
-                    // Use the nested function for setting hero image
-                    //InvokeOnUI(() => SetHeroImage());
                     break;
 
                 default:
