@@ -391,4 +391,46 @@
   <data name="Toronto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Toronto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Clash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Flashpoint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Flashpoint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hanaoka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hanaoka.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_clash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon-clash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_flashpoint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon-flashpoint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Illari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Illari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Juno" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Juno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mauga" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mauga.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="New_Junk_City" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\New_Junk_City.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Runasapi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Runasapi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Samoa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Samoa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Suravasa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Suravasa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Throne_of_Anubis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Throne_of_Anubis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Venture" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Venture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
