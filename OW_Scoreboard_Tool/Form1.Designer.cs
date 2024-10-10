@@ -7967,7 +7967,7 @@ namespace OW_Scoreboard_Tool
             this.tabpage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabpage2.Size = new System.Drawing.Size(931, 408);
             this.tabpage2.TabIndex = 4;
-            this.tabpage2.Text = "tabPage2";
+            this.tabpage2.Text = "Hotkeys";
             this.tabpage2.UseVisualStyleBackColor = true;
             // 
             // MatchHotkeyGroup
