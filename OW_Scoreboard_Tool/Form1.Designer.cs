@@ -651,30 +651,30 @@ namespace OW_Scoreboard_Tool
             this.bracketTeam2 = new System.Windows.Forms.TextBox();
             this.bracketTeam1 = new System.Windows.Forms.TextBox();
             this.tabpage2 = new System.Windows.Forms.TabPage();
-            this.BTN_SET_HK_SWAPTEAMS = new System.Windows.Forms.Button();
-            this.INPUT_SET_HK_SWAPTEAMS = new System.Windows.Forms.Label();
-            this.LBL_SET_HK_SWAPTEAMS = new System.Windows.Forms.Label();
-            this.colorThemeDialog = new System.Windows.Forms.ColorDialog();
-            this.ButtonToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.BTN_SET_HK_INCREMENT_T1 = new System.Windows.Forms.Button();
-            this.INPUT_SET_HK_INCREMENT_T1 = new System.Windows.Forms.Label();
-            this.LBL_SET_HK_INCREMENT_T1 = new System.Windows.Forms.Label();
-            this.BTN_SET_HK_INCREMENT_T2 = new System.Windows.Forms.Button();
-            this.INPUT_SET_HK_INCREMENT_T2 = new System.Windows.Forms.Label();
-            this.LBL_SET_HK_INCREMENT_T2 = new System.Windows.Forms.Label();
-            this.BTN_SET_HK_UPDATE = new System.Windows.Forms.Button();
-            this.INPUT_SET_HK_UPDATE = new System.Windows.Forms.Label();
+            this.MatchHotkeyGroup = new System.Windows.Forms.GroupBox();
             this.LBL_SET_HK_UPDATE = new System.Windows.Forms.Label();
-            this.BTN_SET_HK_DECREMENT_T1 = new System.Windows.Forms.Button();
-            this.INPUT_SET_HK_DECREMENT_T1 = new System.Windows.Forms.Label();
-            this.LBL_SET_HK_DECREMENT_T1 = new System.Windows.Forms.Label();
             this.BTN_SET_HK_DECREMENT_T2 = new System.Windows.Forms.Button();
+            this.BTN_SET_HK_RESET = new System.Windows.Forms.Button();
             this.INPUT_SET_HK_DECREMENT_T2 = new System.Windows.Forms.Label();
             this.LBL_SET_HK_DECREMENT_T2 = new System.Windows.Forms.Label();
-            this.BTN_SET_HK_RESET = new System.Windows.Forms.Button();
+            this.LBL_SET_HK_SWAPTEAMS = new System.Windows.Forms.Label();
+            this.BTN_SET_HK_DECREMENT_T1 = new System.Windows.Forms.Button();
             this.INPUT_SET_HK_RESET = new System.Windows.Forms.Label();
+            this.INPUT_SET_HK_DECREMENT_T1 = new System.Windows.Forms.Label();
+            this.INPUT_SET_HK_SWAPTEAMS = new System.Windows.Forms.Label();
+            this.LBL_SET_HK_DECREMENT_T1 = new System.Windows.Forms.Label();
             this.LBL_SET_HK_RESET = new System.Windows.Forms.Label();
-            this.MatchHotkeyGroup = new System.Windows.Forms.GroupBox();
+            this.BTN_SET_HK_INCREMENT_T2 = new System.Windows.Forms.Button();
+            this.BTN_SET_HK_SWAPTEAMS = new System.Windows.Forms.Button();
+            this.INPUT_SET_HK_INCREMENT_T2 = new System.Windows.Forms.Label();
+            this.INPUT_SET_HK_UPDATE = new System.Windows.Forms.Label();
+            this.LBL_SET_HK_INCREMENT_T2 = new System.Windows.Forms.Label();
+            this.BTN_SET_HK_UPDATE = new System.Windows.Forms.Button();
+            this.BTN_SET_HK_INCREMENT_T1 = new System.Windows.Forms.Button();
+            this.LBL_SET_HK_INCREMENT_T1 = new System.Windows.Forms.Label();
+            this.INPUT_SET_HK_INCREMENT_T1 = new System.Windows.Forms.Label();
+            this.colorThemeDialog = new System.Windows.Forms.ColorDialog();
+            this.ButtonToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.General_Info.SuspendLayout();
             this.imageButtonContextMenu.SuspendLayout();
@@ -872,14 +872,14 @@ namespace OW_Scoreboard_Tool
             // importSeriesToolStripMenuItem
             // 
             this.importSeriesToolStripMenuItem.Name = "importSeriesToolStripMenuItem";
-            this.importSeriesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importSeriesToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.importSeriesToolStripMenuItem.Text = "Import Series";
             this.importSeriesToolStripMenuItem.Click += new System.EventHandler(this.importSeriesToolStripMenuItem_Click);
             // 
             // exportSeriesToolStripMenuItem
             // 
             this.exportSeriesToolStripMenuItem.Name = "exportSeriesToolStripMenuItem";
-            this.exportSeriesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportSeriesToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.exportSeriesToolStripMenuItem.Text = "Export Series";
             this.exportSeriesToolStripMenuItem.Click += new System.EventHandler(this.exportSeriesToolStripMenuItem_Click);
             // 
@@ -2960,18 +2960,22 @@ namespace OW_Scoreboard_Tool
             // m1t2Logo
             // 
             this.m1t2Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.m1t2Logo.Image = global::OW_Scoreboard_Tool.Properties.Resources.nologo;
             this.m1t2Logo.Location = new System.Drawing.Point(500, 7);
             this.m1t2Logo.Name = "m1t2Logo";
             this.m1t2Logo.Size = new System.Drawing.Size(75, 35);
+            this.m1t2Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.m1t2Logo.TabIndex = 148;
             this.m1t2Logo.TabStop = false;
             // 
             // m1t1Logo
             // 
             this.m1t1Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.m1t1Logo.Image = global::OW_Scoreboard_Tool.Properties.Resources.nologo;
             this.m1t1Logo.Location = new System.Drawing.Point(357, 6);
             this.m1t1Logo.Name = "m1t1Logo";
             this.m1t1Logo.Size = new System.Drawing.Size(75, 35);
+            this.m1t1Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.m1t1Logo.TabIndex = 147;
             this.m1t1Logo.TabStop = false;
             // 
@@ -7966,215 +7970,6 @@ namespace OW_Scoreboard_Tool
             this.tabpage2.Text = "tabPage2";
             this.tabpage2.UseVisualStyleBackColor = true;
             // 
-            // BTN_SET_HK_SWAPTEAMS
-            // 
-            this.BTN_SET_HK_SWAPTEAMS.Location = new System.Drawing.Point(219, 33);
-            this.BTN_SET_HK_SWAPTEAMS.Name = "BTN_SET_HK_SWAPTEAMS";
-            this.BTN_SET_HK_SWAPTEAMS.Size = new System.Drawing.Size(43, 23);
-            this.BTN_SET_HK_SWAPTEAMS.TabIndex = 2;
-            this.BTN_SET_HK_SWAPTEAMS.Text = "SET";
-            this.BTN_SET_HK_SWAPTEAMS.UseVisualStyleBackColor = true;
-            this.BTN_SET_HK_SWAPTEAMS.Click += new System.EventHandler(this.SetHotkey);
-            // 
-            // INPUT_SET_HK_SWAPTEAMS
-            // 
-            this.INPUT_SET_HK_SWAPTEAMS.AutoSize = true;
-            this.INPUT_SET_HK_SWAPTEAMS.BackColor = System.Drawing.Color.Gainsboro;
-            this.INPUT_SET_HK_SWAPTEAMS.Location = new System.Drawing.Point(113, 38);
-            this.INPUT_SET_HK_SWAPTEAMS.MinimumSize = new System.Drawing.Size(100, 0);
-            this.INPUT_SET_HK_SWAPTEAMS.Name = "INPUT_SET_HK_SWAPTEAMS";
-            this.INPUT_SET_HK_SWAPTEAMS.Size = new System.Drawing.Size(100, 13);
-            this.INPUT_SET_HK_SWAPTEAMS.TabIndex = 1;
-            // 
-            // LBL_SET_HK_SWAPTEAMS
-            // 
-            this.LBL_SET_HK_SWAPTEAMS.AutoSize = true;
-            this.LBL_SET_HK_SWAPTEAMS.Location = new System.Drawing.Point(38, 38);
-            this.LBL_SET_HK_SWAPTEAMS.Name = "LBL_SET_HK_SWAPTEAMS";
-            this.LBL_SET_HK_SWAPTEAMS.Size = new System.Drawing.Size(69, 13);
-            this.LBL_SET_HK_SWAPTEAMS.TabIndex = 0;
-            this.LBL_SET_HK_SWAPTEAMS.Text = "Swap Teams";
-            // 
-            // colorThemeDialog
-            // 
-            this.colorThemeDialog.Color = System.Drawing.Color.Transparent;
-            // 
-            // BTN_SET_HK_INCREMENT_T1
-            // 
-            this.BTN_SET_HK_INCREMENT_T1.Location = new System.Drawing.Point(219, 119);
-            this.BTN_SET_HK_INCREMENT_T1.Name = "BTN_SET_HK_INCREMENT_T1";
-            this.BTN_SET_HK_INCREMENT_T1.Size = new System.Drawing.Size(43, 23);
-            this.BTN_SET_HK_INCREMENT_T1.TabIndex = 5;
-            this.BTN_SET_HK_INCREMENT_T1.Text = "SET";
-            this.BTN_SET_HK_INCREMENT_T1.UseVisualStyleBackColor = true;
-            this.BTN_SET_HK_INCREMENT_T1.Click += new System.EventHandler(this.SetHotkey);
-            // 
-            // INPUT_SET_HK_INCREMENT_T1
-            // 
-            this.INPUT_SET_HK_INCREMENT_T1.AutoSize = true;
-            this.INPUT_SET_HK_INCREMENT_T1.BackColor = System.Drawing.Color.Gainsboro;
-            this.INPUT_SET_HK_INCREMENT_T1.Location = new System.Drawing.Point(113, 124);
-            this.INPUT_SET_HK_INCREMENT_T1.MinimumSize = new System.Drawing.Size(100, 0);
-            this.INPUT_SET_HK_INCREMENT_T1.Name = "INPUT_SET_HK_INCREMENT_T1";
-            this.INPUT_SET_HK_INCREMENT_T1.Size = new System.Drawing.Size(100, 13);
-            this.INPUT_SET_HK_INCREMENT_T1.TabIndex = 4;
-            // 
-            // LBL_SET_HK_INCREMENT_T1
-            // 
-            this.LBL_SET_HK_INCREMENT_T1.AutoSize = true;
-            this.LBL_SET_HK_INCREMENT_T1.Location = new System.Drawing.Point(17, 125);
-            this.LBL_SET_HK_INCREMENT_T1.Name = "LBL_SET_HK_INCREMENT_T1";
-            this.LBL_SET_HK_INCREMENT_T1.Size = new System.Drawing.Size(90, 13);
-            this.LBL_SET_HK_INCREMENT_T1.TabIndex = 3;
-            this.LBL_SET_HK_INCREMENT_T1.Text = "Increment Team1";
-            // 
-            // BTN_SET_HK_INCREMENT_T2
-            // 
-            this.BTN_SET_HK_INCREMENT_T2.Location = new System.Drawing.Point(219, 177);
-            this.BTN_SET_HK_INCREMENT_T2.Name = "BTN_SET_HK_INCREMENT_T2";
-            this.BTN_SET_HK_INCREMENT_T2.Size = new System.Drawing.Size(43, 23);
-            this.BTN_SET_HK_INCREMENT_T2.TabIndex = 8;
-            this.BTN_SET_HK_INCREMENT_T2.Text = "SET";
-            this.BTN_SET_HK_INCREMENT_T2.UseVisualStyleBackColor = true;
-            this.BTN_SET_HK_INCREMENT_T2.Click += new System.EventHandler(this.SetHotkey);
-            // 
-            // INPUT_SET_HK_INCREMENT_T2
-            // 
-            this.INPUT_SET_HK_INCREMENT_T2.AutoSize = true;
-            this.INPUT_SET_HK_INCREMENT_T2.BackColor = System.Drawing.Color.Gainsboro;
-            this.INPUT_SET_HK_INCREMENT_T2.Location = new System.Drawing.Point(113, 182);
-            this.INPUT_SET_HK_INCREMENT_T2.MinimumSize = new System.Drawing.Size(100, 0);
-            this.INPUT_SET_HK_INCREMENT_T2.Name = "INPUT_SET_HK_INCREMENT_T2";
-            this.INPUT_SET_HK_INCREMENT_T2.Size = new System.Drawing.Size(100, 13);
-            this.INPUT_SET_HK_INCREMENT_T2.TabIndex = 7;
-            // 
-            // LBL_SET_HK_INCREMENT_T2
-            // 
-            this.LBL_SET_HK_INCREMENT_T2.AutoSize = true;
-            this.LBL_SET_HK_INCREMENT_T2.Location = new System.Drawing.Point(17, 182);
-            this.LBL_SET_HK_INCREMENT_T2.Name = "LBL_SET_HK_INCREMENT_T2";
-            this.LBL_SET_HK_INCREMENT_T2.Size = new System.Drawing.Size(90, 13);
-            this.LBL_SET_HK_INCREMENT_T2.TabIndex = 6;
-            this.LBL_SET_HK_INCREMENT_T2.Text = "Increment Team2";
-            // 
-            // BTN_SET_HK_UPDATE
-            // 
-            this.BTN_SET_HK_UPDATE.Location = new System.Drawing.Point(219, 59);
-            this.BTN_SET_HK_UPDATE.Name = "BTN_SET_HK_UPDATE";
-            this.BTN_SET_HK_UPDATE.Size = new System.Drawing.Size(43, 23);
-            this.BTN_SET_HK_UPDATE.TabIndex = 11;
-            this.BTN_SET_HK_UPDATE.Text = "SET";
-            this.BTN_SET_HK_UPDATE.UseVisualStyleBackColor = true;
-            this.BTN_SET_HK_UPDATE.Click += new System.EventHandler(this.SetHotkey);
-            // 
-            // INPUT_SET_HK_UPDATE
-            // 
-            this.INPUT_SET_HK_UPDATE.AutoSize = true;
-            this.INPUT_SET_HK_UPDATE.BackColor = System.Drawing.Color.Gainsboro;
-            this.INPUT_SET_HK_UPDATE.Location = new System.Drawing.Point(113, 64);
-            this.INPUT_SET_HK_UPDATE.MinimumSize = new System.Drawing.Size(100, 0);
-            this.INPUT_SET_HK_UPDATE.Name = "INPUT_SET_HK_UPDATE";
-            this.INPUT_SET_HK_UPDATE.Size = new System.Drawing.Size(100, 13);
-            this.INPUT_SET_HK_UPDATE.TabIndex = 10;
-            this.INPUT_SET_HK_UPDATE.Click += new System.EventHandler(this.INPUT_SET_HK_UPDATE_Click);
-            // 
-            // LBL_SET_HK_UPDATE
-            // 
-            this.LBL_SET_HK_UPDATE.AutoSize = true;
-            this.LBL_SET_HK_UPDATE.Location = new System.Drawing.Point(32, 64);
-            this.LBL_SET_HK_UPDATE.Name = "LBL_SET_HK_UPDATE";
-            this.LBL_SET_HK_UPDATE.Size = new System.Drawing.Size(75, 13);
-            this.LBL_SET_HK_UPDATE.TabIndex = 9;
-            this.LBL_SET_HK_UPDATE.Text = "Update Match";
-            this.LBL_SET_HK_UPDATE.Click += new System.EventHandler(this.LBL_SET_HK_UPDATE_Click);
-            // 
-            // BTN_SET_HK_DECREMENT_T1
-            // 
-            this.BTN_SET_HK_DECREMENT_T1.Location = new System.Drawing.Point(219, 148);
-            this.BTN_SET_HK_DECREMENT_T1.Name = "BTN_SET_HK_DECREMENT_T1";
-            this.BTN_SET_HK_DECREMENT_T1.Size = new System.Drawing.Size(43, 23);
-            this.BTN_SET_HK_DECREMENT_T1.TabIndex = 14;
-            this.BTN_SET_HK_DECREMENT_T1.Text = "SET";
-            this.BTN_SET_HK_DECREMENT_T1.UseVisualStyleBackColor = true;
-            this.BTN_SET_HK_DECREMENT_T1.Click += new System.EventHandler(this.SetHotkey);
-            // 
-            // INPUT_SET_HK_DECREMENT_T1
-            // 
-            this.INPUT_SET_HK_DECREMENT_T1.AutoSize = true;
-            this.INPUT_SET_HK_DECREMENT_T1.BackColor = System.Drawing.Color.Gainsboro;
-            this.INPUT_SET_HK_DECREMENT_T1.Location = new System.Drawing.Point(113, 153);
-            this.INPUT_SET_HK_DECREMENT_T1.MinimumSize = new System.Drawing.Size(100, 0);
-            this.INPUT_SET_HK_DECREMENT_T1.Name = "INPUT_SET_HK_DECREMENT_T1";
-            this.INPUT_SET_HK_DECREMENT_T1.Size = new System.Drawing.Size(100, 13);
-            this.INPUT_SET_HK_DECREMENT_T1.TabIndex = 13;
-            // 
-            // LBL_SET_HK_DECREMENT_T1
-            // 
-            this.LBL_SET_HK_DECREMENT_T1.AutoSize = true;
-            this.LBL_SET_HK_DECREMENT_T1.Location = new System.Drawing.Point(12, 153);
-            this.LBL_SET_HK_DECREMENT_T1.Name = "LBL_SET_HK_DECREMENT_T1";
-            this.LBL_SET_HK_DECREMENT_T1.Size = new System.Drawing.Size(95, 13);
-            this.LBL_SET_HK_DECREMENT_T1.TabIndex = 12;
-            this.LBL_SET_HK_DECREMENT_T1.Text = "Decrement Team1";
-            // 
-            // BTN_SET_HK_DECREMENT_T2
-            // 
-            this.BTN_SET_HK_DECREMENT_T2.Location = new System.Drawing.Point(219, 206);
-            this.BTN_SET_HK_DECREMENT_T2.Name = "BTN_SET_HK_DECREMENT_T2";
-            this.BTN_SET_HK_DECREMENT_T2.Size = new System.Drawing.Size(43, 23);
-            this.BTN_SET_HK_DECREMENT_T2.TabIndex = 17;
-            this.BTN_SET_HK_DECREMENT_T2.Text = "SET";
-            this.BTN_SET_HK_DECREMENT_T2.UseVisualStyleBackColor = true;
-            this.BTN_SET_HK_DECREMENT_T2.Click += new System.EventHandler(this.SetHotkey);
-            // 
-            // INPUT_SET_HK_DECREMENT_T2
-            // 
-            this.INPUT_SET_HK_DECREMENT_T2.AutoSize = true;
-            this.INPUT_SET_HK_DECREMENT_T2.BackColor = System.Drawing.Color.Gainsboro;
-            this.INPUT_SET_HK_DECREMENT_T2.Location = new System.Drawing.Point(113, 211);
-            this.INPUT_SET_HK_DECREMENT_T2.MinimumSize = new System.Drawing.Size(100, 0);
-            this.INPUT_SET_HK_DECREMENT_T2.Name = "INPUT_SET_HK_DECREMENT_T2";
-            this.INPUT_SET_HK_DECREMENT_T2.Size = new System.Drawing.Size(100, 13);
-            this.INPUT_SET_HK_DECREMENT_T2.TabIndex = 16;
-            // 
-            // LBL_SET_HK_DECREMENT_T2
-            // 
-            this.LBL_SET_HK_DECREMENT_T2.AutoSize = true;
-            this.LBL_SET_HK_DECREMENT_T2.Location = new System.Drawing.Point(12, 211);
-            this.LBL_SET_HK_DECREMENT_T2.Name = "LBL_SET_HK_DECREMENT_T2";
-            this.LBL_SET_HK_DECREMENT_T2.Size = new System.Drawing.Size(95, 13);
-            this.LBL_SET_HK_DECREMENT_T2.TabIndex = 15;
-            this.LBL_SET_HK_DECREMENT_T2.Text = "Decrement Team2";
-            // 
-            // BTN_SET_HK_RESET
-            // 
-            this.BTN_SET_HK_RESET.Location = new System.Drawing.Point(219, 88);
-            this.BTN_SET_HK_RESET.Name = "BTN_SET_HK_RESET";
-            this.BTN_SET_HK_RESET.Size = new System.Drawing.Size(43, 23);
-            this.BTN_SET_HK_RESET.TabIndex = 20;
-            this.BTN_SET_HK_RESET.Text = "SET";
-            this.BTN_SET_HK_RESET.UseVisualStyleBackColor = true;
-            this.BTN_SET_HK_RESET.Click += new System.EventHandler(this.SetHotkey);
-            // 
-            // INPUT_SET_HK_RESET
-            // 
-            this.INPUT_SET_HK_RESET.AutoSize = true;
-            this.INPUT_SET_HK_RESET.BackColor = System.Drawing.Color.Gainsboro;
-            this.INPUT_SET_HK_RESET.Location = new System.Drawing.Point(113, 93);
-            this.INPUT_SET_HK_RESET.MinimumSize = new System.Drawing.Size(100, 0);
-            this.INPUT_SET_HK_RESET.Name = "INPUT_SET_HK_RESET";
-            this.INPUT_SET_HK_RESET.Size = new System.Drawing.Size(100, 13);
-            this.INPUT_SET_HK_RESET.TabIndex = 19;
-            // 
-            // LBL_SET_HK_RESET
-            // 
-            this.LBL_SET_HK_RESET.AutoSize = true;
-            this.LBL_SET_HK_RESET.Location = new System.Drawing.Point(28, 93);
-            this.LBL_SET_HK_RESET.Name = "LBL_SET_HK_RESET";
-            this.LBL_SET_HK_RESET.Size = new System.Drawing.Size(79, 13);
-            this.LBL_SET_HK_RESET.TabIndex = 18;
-            this.LBL_SET_HK_RESET.Text = "Reset Matches";
-            // 
             // MatchHotkeyGroup
             // 
             this.MatchHotkeyGroup.Controls.Add(this.LBL_SET_HK_UPDATE);
@@ -8204,6 +7999,215 @@ namespace OW_Scoreboard_Tool
             this.MatchHotkeyGroup.TabIndex = 21;
             this.MatchHotkeyGroup.TabStop = false;
             this.MatchHotkeyGroup.Text = "Match";
+            // 
+            // LBL_SET_HK_UPDATE
+            // 
+            this.LBL_SET_HK_UPDATE.AutoSize = true;
+            this.LBL_SET_HK_UPDATE.Location = new System.Drawing.Point(32, 64);
+            this.LBL_SET_HK_UPDATE.Name = "LBL_SET_HK_UPDATE";
+            this.LBL_SET_HK_UPDATE.Size = new System.Drawing.Size(75, 13);
+            this.LBL_SET_HK_UPDATE.TabIndex = 9;
+            this.LBL_SET_HK_UPDATE.Text = "Update Match";
+            this.LBL_SET_HK_UPDATE.Click += new System.EventHandler(this.LBL_SET_HK_UPDATE_Click);
+            // 
+            // BTN_SET_HK_DECREMENT_T2
+            // 
+            this.BTN_SET_HK_DECREMENT_T2.Location = new System.Drawing.Point(219, 206);
+            this.BTN_SET_HK_DECREMENT_T2.Name = "BTN_SET_HK_DECREMENT_T2";
+            this.BTN_SET_HK_DECREMENT_T2.Size = new System.Drawing.Size(43, 23);
+            this.BTN_SET_HK_DECREMENT_T2.TabIndex = 17;
+            this.BTN_SET_HK_DECREMENT_T2.Text = "SET";
+            this.BTN_SET_HK_DECREMENT_T2.UseVisualStyleBackColor = true;
+            this.BTN_SET_HK_DECREMENT_T2.Click += new System.EventHandler(this.SetHotkey);
+            // 
+            // BTN_SET_HK_RESET
+            // 
+            this.BTN_SET_HK_RESET.Location = new System.Drawing.Point(219, 88);
+            this.BTN_SET_HK_RESET.Name = "BTN_SET_HK_RESET";
+            this.BTN_SET_HK_RESET.Size = new System.Drawing.Size(43, 23);
+            this.BTN_SET_HK_RESET.TabIndex = 20;
+            this.BTN_SET_HK_RESET.Text = "SET";
+            this.BTN_SET_HK_RESET.UseVisualStyleBackColor = true;
+            this.BTN_SET_HK_RESET.Click += new System.EventHandler(this.SetHotkey);
+            // 
+            // INPUT_SET_HK_DECREMENT_T2
+            // 
+            this.INPUT_SET_HK_DECREMENT_T2.AutoSize = true;
+            this.INPUT_SET_HK_DECREMENT_T2.BackColor = System.Drawing.Color.Gainsboro;
+            this.INPUT_SET_HK_DECREMENT_T2.Location = new System.Drawing.Point(113, 211);
+            this.INPUT_SET_HK_DECREMENT_T2.MinimumSize = new System.Drawing.Size(100, 0);
+            this.INPUT_SET_HK_DECREMENT_T2.Name = "INPUT_SET_HK_DECREMENT_T2";
+            this.INPUT_SET_HK_DECREMENT_T2.Size = new System.Drawing.Size(100, 13);
+            this.INPUT_SET_HK_DECREMENT_T2.TabIndex = 16;
+            // 
+            // LBL_SET_HK_DECREMENT_T2
+            // 
+            this.LBL_SET_HK_DECREMENT_T2.AutoSize = true;
+            this.LBL_SET_HK_DECREMENT_T2.Location = new System.Drawing.Point(12, 211);
+            this.LBL_SET_HK_DECREMENT_T2.Name = "LBL_SET_HK_DECREMENT_T2";
+            this.LBL_SET_HK_DECREMENT_T2.Size = new System.Drawing.Size(95, 13);
+            this.LBL_SET_HK_DECREMENT_T2.TabIndex = 15;
+            this.LBL_SET_HK_DECREMENT_T2.Text = "Decrement Team2";
+            // 
+            // LBL_SET_HK_SWAPTEAMS
+            // 
+            this.LBL_SET_HK_SWAPTEAMS.AutoSize = true;
+            this.LBL_SET_HK_SWAPTEAMS.Location = new System.Drawing.Point(38, 38);
+            this.LBL_SET_HK_SWAPTEAMS.Name = "LBL_SET_HK_SWAPTEAMS";
+            this.LBL_SET_HK_SWAPTEAMS.Size = new System.Drawing.Size(69, 13);
+            this.LBL_SET_HK_SWAPTEAMS.TabIndex = 0;
+            this.LBL_SET_HK_SWAPTEAMS.Text = "Swap Teams";
+            // 
+            // BTN_SET_HK_DECREMENT_T1
+            // 
+            this.BTN_SET_HK_DECREMENT_T1.Location = new System.Drawing.Point(219, 148);
+            this.BTN_SET_HK_DECREMENT_T1.Name = "BTN_SET_HK_DECREMENT_T1";
+            this.BTN_SET_HK_DECREMENT_T1.Size = new System.Drawing.Size(43, 23);
+            this.BTN_SET_HK_DECREMENT_T1.TabIndex = 14;
+            this.BTN_SET_HK_DECREMENT_T1.Text = "SET";
+            this.BTN_SET_HK_DECREMENT_T1.UseVisualStyleBackColor = true;
+            this.BTN_SET_HK_DECREMENT_T1.Click += new System.EventHandler(this.SetHotkey);
+            // 
+            // INPUT_SET_HK_RESET
+            // 
+            this.INPUT_SET_HK_RESET.AutoSize = true;
+            this.INPUT_SET_HK_RESET.BackColor = System.Drawing.Color.Gainsboro;
+            this.INPUT_SET_HK_RESET.Location = new System.Drawing.Point(113, 93);
+            this.INPUT_SET_HK_RESET.MinimumSize = new System.Drawing.Size(100, 0);
+            this.INPUT_SET_HK_RESET.Name = "INPUT_SET_HK_RESET";
+            this.INPUT_SET_HK_RESET.Size = new System.Drawing.Size(100, 13);
+            this.INPUT_SET_HK_RESET.TabIndex = 19;
+            // 
+            // INPUT_SET_HK_DECREMENT_T1
+            // 
+            this.INPUT_SET_HK_DECREMENT_T1.AutoSize = true;
+            this.INPUT_SET_HK_DECREMENT_T1.BackColor = System.Drawing.Color.Gainsboro;
+            this.INPUT_SET_HK_DECREMENT_T1.Location = new System.Drawing.Point(113, 153);
+            this.INPUT_SET_HK_DECREMENT_T1.MinimumSize = new System.Drawing.Size(100, 0);
+            this.INPUT_SET_HK_DECREMENT_T1.Name = "INPUT_SET_HK_DECREMENT_T1";
+            this.INPUT_SET_HK_DECREMENT_T1.Size = new System.Drawing.Size(100, 13);
+            this.INPUT_SET_HK_DECREMENT_T1.TabIndex = 13;
+            // 
+            // INPUT_SET_HK_SWAPTEAMS
+            // 
+            this.INPUT_SET_HK_SWAPTEAMS.AutoSize = true;
+            this.INPUT_SET_HK_SWAPTEAMS.BackColor = System.Drawing.Color.Gainsboro;
+            this.INPUT_SET_HK_SWAPTEAMS.Location = new System.Drawing.Point(113, 38);
+            this.INPUT_SET_HK_SWAPTEAMS.MinimumSize = new System.Drawing.Size(100, 0);
+            this.INPUT_SET_HK_SWAPTEAMS.Name = "INPUT_SET_HK_SWAPTEAMS";
+            this.INPUT_SET_HK_SWAPTEAMS.Size = new System.Drawing.Size(100, 13);
+            this.INPUT_SET_HK_SWAPTEAMS.TabIndex = 1;
+            // 
+            // LBL_SET_HK_DECREMENT_T1
+            // 
+            this.LBL_SET_HK_DECREMENT_T1.AutoSize = true;
+            this.LBL_SET_HK_DECREMENT_T1.Location = new System.Drawing.Point(12, 153);
+            this.LBL_SET_HK_DECREMENT_T1.Name = "LBL_SET_HK_DECREMENT_T1";
+            this.LBL_SET_HK_DECREMENT_T1.Size = new System.Drawing.Size(95, 13);
+            this.LBL_SET_HK_DECREMENT_T1.TabIndex = 12;
+            this.LBL_SET_HK_DECREMENT_T1.Text = "Decrement Team1";
+            // 
+            // LBL_SET_HK_RESET
+            // 
+            this.LBL_SET_HK_RESET.AutoSize = true;
+            this.LBL_SET_HK_RESET.Location = new System.Drawing.Point(28, 93);
+            this.LBL_SET_HK_RESET.Name = "LBL_SET_HK_RESET";
+            this.LBL_SET_HK_RESET.Size = new System.Drawing.Size(79, 13);
+            this.LBL_SET_HK_RESET.TabIndex = 18;
+            this.LBL_SET_HK_RESET.Text = "Reset Matches";
+            // 
+            // BTN_SET_HK_INCREMENT_T2
+            // 
+            this.BTN_SET_HK_INCREMENT_T2.Location = new System.Drawing.Point(219, 177);
+            this.BTN_SET_HK_INCREMENT_T2.Name = "BTN_SET_HK_INCREMENT_T2";
+            this.BTN_SET_HK_INCREMENT_T2.Size = new System.Drawing.Size(43, 23);
+            this.BTN_SET_HK_INCREMENT_T2.TabIndex = 8;
+            this.BTN_SET_HK_INCREMENT_T2.Text = "SET";
+            this.BTN_SET_HK_INCREMENT_T2.UseVisualStyleBackColor = true;
+            this.BTN_SET_HK_INCREMENT_T2.Click += new System.EventHandler(this.SetHotkey);
+            // 
+            // BTN_SET_HK_SWAPTEAMS
+            // 
+            this.BTN_SET_HK_SWAPTEAMS.Location = new System.Drawing.Point(219, 33);
+            this.BTN_SET_HK_SWAPTEAMS.Name = "BTN_SET_HK_SWAPTEAMS";
+            this.BTN_SET_HK_SWAPTEAMS.Size = new System.Drawing.Size(43, 23);
+            this.BTN_SET_HK_SWAPTEAMS.TabIndex = 2;
+            this.BTN_SET_HK_SWAPTEAMS.Text = "SET";
+            this.BTN_SET_HK_SWAPTEAMS.UseVisualStyleBackColor = true;
+            this.BTN_SET_HK_SWAPTEAMS.Click += new System.EventHandler(this.SetHotkey);
+            // 
+            // INPUT_SET_HK_INCREMENT_T2
+            // 
+            this.INPUT_SET_HK_INCREMENT_T2.AutoSize = true;
+            this.INPUT_SET_HK_INCREMENT_T2.BackColor = System.Drawing.Color.Gainsboro;
+            this.INPUT_SET_HK_INCREMENT_T2.Location = new System.Drawing.Point(113, 182);
+            this.INPUT_SET_HK_INCREMENT_T2.MinimumSize = new System.Drawing.Size(100, 0);
+            this.INPUT_SET_HK_INCREMENT_T2.Name = "INPUT_SET_HK_INCREMENT_T2";
+            this.INPUT_SET_HK_INCREMENT_T2.Size = new System.Drawing.Size(100, 13);
+            this.INPUT_SET_HK_INCREMENT_T2.TabIndex = 7;
+            // 
+            // INPUT_SET_HK_UPDATE
+            // 
+            this.INPUT_SET_HK_UPDATE.AutoSize = true;
+            this.INPUT_SET_HK_UPDATE.BackColor = System.Drawing.Color.Gainsboro;
+            this.INPUT_SET_HK_UPDATE.Location = new System.Drawing.Point(113, 64);
+            this.INPUT_SET_HK_UPDATE.MinimumSize = new System.Drawing.Size(100, 0);
+            this.INPUT_SET_HK_UPDATE.Name = "INPUT_SET_HK_UPDATE";
+            this.INPUT_SET_HK_UPDATE.Size = new System.Drawing.Size(100, 13);
+            this.INPUT_SET_HK_UPDATE.TabIndex = 10;
+            this.INPUT_SET_HK_UPDATE.Click += new System.EventHandler(this.INPUT_SET_HK_UPDATE_Click);
+            // 
+            // LBL_SET_HK_INCREMENT_T2
+            // 
+            this.LBL_SET_HK_INCREMENT_T2.AutoSize = true;
+            this.LBL_SET_HK_INCREMENT_T2.Location = new System.Drawing.Point(17, 182);
+            this.LBL_SET_HK_INCREMENT_T2.Name = "LBL_SET_HK_INCREMENT_T2";
+            this.LBL_SET_HK_INCREMENT_T2.Size = new System.Drawing.Size(90, 13);
+            this.LBL_SET_HK_INCREMENT_T2.TabIndex = 6;
+            this.LBL_SET_HK_INCREMENT_T2.Text = "Increment Team2";
+            // 
+            // BTN_SET_HK_UPDATE
+            // 
+            this.BTN_SET_HK_UPDATE.Location = new System.Drawing.Point(219, 59);
+            this.BTN_SET_HK_UPDATE.Name = "BTN_SET_HK_UPDATE";
+            this.BTN_SET_HK_UPDATE.Size = new System.Drawing.Size(43, 23);
+            this.BTN_SET_HK_UPDATE.TabIndex = 11;
+            this.BTN_SET_HK_UPDATE.Text = "SET";
+            this.BTN_SET_HK_UPDATE.UseVisualStyleBackColor = true;
+            this.BTN_SET_HK_UPDATE.Click += new System.EventHandler(this.SetHotkey);
+            // 
+            // BTN_SET_HK_INCREMENT_T1
+            // 
+            this.BTN_SET_HK_INCREMENT_T1.Location = new System.Drawing.Point(219, 119);
+            this.BTN_SET_HK_INCREMENT_T1.Name = "BTN_SET_HK_INCREMENT_T1";
+            this.BTN_SET_HK_INCREMENT_T1.Size = new System.Drawing.Size(43, 23);
+            this.BTN_SET_HK_INCREMENT_T1.TabIndex = 5;
+            this.BTN_SET_HK_INCREMENT_T1.Text = "SET";
+            this.BTN_SET_HK_INCREMENT_T1.UseVisualStyleBackColor = true;
+            this.BTN_SET_HK_INCREMENT_T1.Click += new System.EventHandler(this.SetHotkey);
+            // 
+            // LBL_SET_HK_INCREMENT_T1
+            // 
+            this.LBL_SET_HK_INCREMENT_T1.AutoSize = true;
+            this.LBL_SET_HK_INCREMENT_T1.Location = new System.Drawing.Point(17, 125);
+            this.LBL_SET_HK_INCREMENT_T1.Name = "LBL_SET_HK_INCREMENT_T1";
+            this.LBL_SET_HK_INCREMENT_T1.Size = new System.Drawing.Size(90, 13);
+            this.LBL_SET_HK_INCREMENT_T1.TabIndex = 3;
+            this.LBL_SET_HK_INCREMENT_T1.Text = "Increment Team1";
+            // 
+            // INPUT_SET_HK_INCREMENT_T1
+            // 
+            this.INPUT_SET_HK_INCREMENT_T1.AutoSize = true;
+            this.INPUT_SET_HK_INCREMENT_T1.BackColor = System.Drawing.Color.Gainsboro;
+            this.INPUT_SET_HK_INCREMENT_T1.Location = new System.Drawing.Point(113, 124);
+            this.INPUT_SET_HK_INCREMENT_T1.MinimumSize = new System.Drawing.Size(100, 0);
+            this.INPUT_SET_HK_INCREMENT_T1.Name = "INPUT_SET_HK_INCREMENT_T1";
+            this.INPUT_SET_HK_INCREMENT_T1.Size = new System.Drawing.Size(100, 13);
+            this.INPUT_SET_HK_INCREMENT_T1.TabIndex = 4;
+            // 
+            // colorThemeDialog
+            // 
+            this.colorThemeDialog.Color = System.Drawing.Color.Transparent;
             // 
             // Form1
             // 

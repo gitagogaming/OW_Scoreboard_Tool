@@ -290,6 +290,7 @@
     <None Include="Resources\Icon-none.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\nologo.jpg" />
     <None Include="Resources\Venture.png" />
     <None Include="Resources\Throne_of_Anubis.png" />
     <None Include="Resources\Suravasa.png" />
