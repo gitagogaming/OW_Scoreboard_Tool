@@ -2049,7 +2049,7 @@ namespace OW_Scoreboard_Tool
         {
             using (StreamWriter sw = File.CreateText(path + "\\" + folder + "\\" + file + ".txt"))
             {
-                sw.WriteLine(((Map)field.SelectedValue).Name.Replace("Assault", "").Replace("Escort", "").Replace("Hybrid", "").Replace("Control", "").Replace("Push", "").Replace("Flashpoint", ""));
+                sw.WriteLine(((Map)field.SelectedValue).Name.Replace("Assault", "").Replace("Escort", "").Replace("Hybrid", "").Replace("Control", "").Replace("Push", "").Replace("Flashpoint", "").Replace("Clash", ""));
             }
             using (StreamWriter sw = File.CreateText(path + "\\" + folder + "\\" + file + "Gametype" + ".txt"))
             {
@@ -3726,12 +3726,13 @@ namespace OW_Scoreboard_Tool
         private void GenerateGametypes()
         {
             DefaultGametypeList.Add(new Gametype("Assault", Properties.Resources.Icon_assault, ""));
-            DefaultGametypeList.Add(new Gametype("Clash", Properties.Resources.Icon_clash, ""));
             DefaultGametypeList.Add(new Gametype("Control", Properties.Resources.Icon_control, ""));
             DefaultGametypeList.Add(new Gametype("Escort", Properties.Resources.Icon_escort, ""));
-            DefaultGametypeList.Add(new Gametype("Flashpoint", Properties.Resources.Icon_flashpoint, ""));
             DefaultGametypeList.Add(new Gametype("Hybrid", Properties.Resources.Icon_hybrid, ""));
             DefaultGametypeList.Add(new Gametype("Push", Properties.Resources.Icon_push, ""));
+            DefaultGametypeList.Add(new Gametype("Flashpoint", Properties.Resources.Icon_flashpoint, ""));
+            DefaultGametypeList.Add(new Gametype("Clash", Properties.Resources.Icon_clash, ""));
+
 
 
 
